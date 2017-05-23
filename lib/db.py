@@ -3,7 +3,7 @@ import pyodbc
 class Db(object):
     """Database connector (requires ODBC)"""
     def __init__(self, dsn):
-        self.DSN = "DSN=%s" % dsn
+        self.DSN = "DSN={0}".format(dsn)
         self.conn = pyodbc.connect(self.DSN)
         self.cursor = self.conn.cursor()
 
