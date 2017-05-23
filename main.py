@@ -5,7 +5,7 @@ import lib.data as data
 
 fn = os.path.join('log', 'output.log')
 
-logging.basicConfig(filename=fn, filemode='w', level=logging.INFO, format='%(asctime)s: %(message)s', datefmt=None)
+logging.basicConfig(filename=fn, filemode='w', level=logging.INFO, format='%(asctime)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
 logging.info("Database replication started.")
 
