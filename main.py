@@ -53,6 +53,8 @@ for dict in db01_results:
     else:
         logging.debug("{0} matches destination database.".format(subject))
 
+logging.info("Insert/update records complete.")
+
 del db01_results[:]
 del db02_results[:]
 
@@ -78,6 +80,8 @@ if db02_count > db01_count:
             logging.debug("{0} failed to delete with the following error: {1}".format(todelete[0], e))
 else:
     logging.info("No records to delete.")
+
+logging.info("Delete records complete.")
 
 db01.disconnect()
 db02.disconnect()
