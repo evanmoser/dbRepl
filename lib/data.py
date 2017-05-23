@@ -67,7 +67,7 @@ def updateStr(dict):
 
 def delQuery(pk_value, pk, table):
     query = "DELETE FROM {0} WHERE {1} = {2}".format(table, pk, pk_value)
-    msg = "{0}: {1} deleted from the destination database.".format(datetime.now(), pk_value)
+    msg = "{0} deleted from the destination database.".format(pk_value)
     return query, msg
 
 def repQuery(dict01, dict02, table, pk):
@@ -76,10 +76,10 @@ def repQuery(dict01, dict02, table, pk):
         headers = dictToString(dict01)
         insert = insertStr(dict01)
         query = "INSERT INTO {0} ({1}) VALUES ({2})".format(table, headers, insert)
-        msg = "{0}: {1} inserted into the destination database.".format(datetime.now(), dict01[pk])
+        msg = "{0} inserted into the destination database.".format(dict01[pk])
     else:
         #UPDATE DESTINATION DB
         update = updateStr(dict01)
         query = "UPDATE {0} SET {1} WHERE {2} = '{3}'".format(table, update, pk, dict01[pk])
-        msg = "{0}: {1} updated in the destination database.".format(datetime.now(), dict01[pk])
+        msg = "{0} updated in the destination database.".format(dict01[pk])
     return query, msg
